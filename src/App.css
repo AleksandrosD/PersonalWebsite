@@ -1,6 +1,7 @@
+@import "tailwindcss";
 .app {
   min-height: 100vh; /* full viewport height */
-  max-width:screen;
+  max-width: screen;
   margin: auto;
   padding: 20px;
   border-radius: 8px;
@@ -10,7 +11,7 @@
 }
 .content {
   min-height: 100vh; /* full viewport height */
-  max-width:800px;
+  max-width: 800px;
   margin: auto;
   padding: 20px;
   border-radius: 8px;
@@ -26,30 +27,90 @@ a {
   position: absolute;
   top: 20px;
   right: 20px;
-  width: 35px;          
+  width: 35px;
   height: 35px;
   border: none;
-  border-radius: 50%; 
+  border-radius: 50%;
   cursor: pointer;
   background-color: var(--button-color);
   color: var(--button-text);
-  display: flex;          
-  align-items: center;    
+  display: flex;
+  align-items: center;
   justify-content: center;
   transition: background-color 0.3s, color 0.3s;
 }
+.links-container {
+  margin-bottom: 30px;
+  margin-top: 30px;
+  display: flex; /* makes children align in a row */
+  gap: 10px; /* spacing between buttons */
+  align-items: center; /* vertical alignment */
+  justify-content: center; /* horizontal alignment */
+}
+
 .links-btn {
-  width: auto;          
-  height: auto;
   border: none;
+  padding: 5px 10px;
   cursor: pointer;
-  font-size: 2em; 
+  font-size: 2em;
   background-color: var(--button-text);
-  color: var( --button-color);
-  align-items: center;    
+  color: var(--button-color);
+  display: flex; /* allows content inside button to align */
+  align-items: center;
   justify-content: center;
-  display:inline;          
-  
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.project-card {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  gap: 24px;
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  width: 100%;
+  background-color: white;
+  color: black;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+.project-image {
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.project-image img {
+  width: 200px;
+  height: auto;
+  border-radius: 12px;
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+.project-text {
+  font-size: 1rem;
+}
+
+.project-link {
+  align-self: flex-start;
+  padding: 7px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: black;
+  text-decoration: none;
 }
 
 .toggle-btn:hover {
@@ -59,6 +120,7 @@ a {
 header {
   text-align: center;
   margin-bottom: 40px;
+  margin-top: 40px;
 }
 
 footer {
