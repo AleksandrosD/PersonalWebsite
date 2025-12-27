@@ -99,7 +99,19 @@ a {
   color: black;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 }
-
+.exp-image{
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.exp-image img{
+  width: 75px;
+  height: 75px;
+  border-radius: 12px;
+}
 .project-image {
   border-radius: 12px;
   overflow: hidden;
@@ -120,7 +132,9 @@ a {
   gap: 16px;
   flex: 1;
 }
-
+.exp-text{
+  font-size: 1rem;
+}
 .project-text {
   font-size: 1rem;
 }

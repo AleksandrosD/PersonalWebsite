@@ -82,24 +82,31 @@ function App() {
 
             <div className="exp-card">
               <div className="exp-image">
-                <img src="/autobahnLogo.png" alt="Hacware" />
+                <img src="/hacwareLogo.png" alt="Hacware" />
               </div>
 
               <div className="exp-content">
                 <p className="exp-text">
-                  <strong>Autobahn</strong> 
+                  <strong>Hacware</strong> 
+                  <br></br>
+                  Software Engineer Intern
                 </p>
+
               </div>
             </div>
             <div className="exp-card">
               <div className="exp-image ">
-                <img src="/runnerLogo.png" alt="The Difference" />
+                <img src="/theDifferenceLogo.png" alt="The Difference" />
               </div>
 
               <div className="exp-content">
                 <p className="exp-text">
-                  <strong>Runner</strong> 
+                  <strong>The Difference App</strong> 
+                  <br></br>
+                  Software Engineer Intern
                 </p>
+    
+                
               </div>
             </div>
           </section>
