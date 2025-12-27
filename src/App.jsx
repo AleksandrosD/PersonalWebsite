@@ -77,6 +77,32 @@ function App() {
           </p>
         </header>
         <main>
+          <section className="proExperience">
+            <h1 class="text-3xl font-mono text---text-color">Profesional Experience</h1>
+
+            <div className="exp-card">
+              <div className="exp-image">
+                <img src="/autobahnLogo.png" alt="Hacware" />
+              </div>
+
+              <div className="exp-content">
+                <p className="exp-text">
+                  <strong>Autobahn</strong> 
+                </p>
+              </div>
+            </div>
+            <div className="exp-card">
+              <div className="exp-image ">
+                <img src="/runnerLogo.png" alt="The Difference" />
+              </div>
+
+              <div className="exp-content">
+                <p className="exp-text">
+                  <strong>Runner</strong> 
+                </p>
+              </div>
+            </div>
+          </section>
           <section className="projects">
             <h1 class="text-3xl font-mono text---text-color">Projects</h1>
 
@@ -94,7 +120,7 @@ function App() {
                 <div className="flex flex-col sm:flex-row sm:gap-x-4 gap-y-2">
                   <a
                     href="https://github.com/AleksandrosD/Autobahn"
-                    className="project-link mr-4"
+                    className="project-link mr-1"
                     target="_blank"
                   >
                     View Repo
@@ -123,7 +149,7 @@ function App() {
                 <div className="flex flex-col sm:flex-row sm:gap-x-4 gap-y-2">
                   <a
                     href="https://github.com/AleksandrosD/TTP-CAPSTONE"
-                    className="project-link mr-4"
+                    className="project-link mr-1"
                     target="_blank"
                   >
                     View Repo
