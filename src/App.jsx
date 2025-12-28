@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   MdLightMode,
   MdOutlineLightMode,
@@ -6,6 +6,7 @@ import {
 } from "react-icons/md";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import "./App.css";
+import PipeCanvas from "./canvasBg.jsx";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -49,10 +50,10 @@ function App() {
       </button>
       <div className="content">
         <header>
-          <h1 class="text-5xl font-mono text---text-color">
+          <h1 className="text-5xl font-mono text---text-color">
             Hi, I'm Aleksandros Doci
           </h1>
-          <div class="links-container">
+          <div className="links-container">
             <a
               className="links-btn"
               href="https://www.linkedin.com/in/aleksandros-doci/"
@@ -72,13 +73,18 @@ function App() {
             </a>
           </div>
           <p>
-            I'm a web developer passionate about React and building cool
-            projects.
+            I’m a software engineer with a strong foundation in computer science
+            and hands-on experience building full-stack web applications and
+            scalable systems. My background spans modern JavaScript frameworks,
+            backend development, and working closely with real-world
+            infrastructure, giving me a practical, problem-solving mindset.
           </p>
         </header>
         <main>
           <section className="proExperience">
-            <h1 class="text-3xl font-mono text---text-color">Profesional Experience</h1>
+            <h1 className="text-3xl font-mono text---text-color">
+              Profesional Experience
+            </h1>
 
             <div className="exp-card">
               <div className="exp-image">
@@ -87,11 +93,29 @@ function App() {
 
               <div className="exp-content">
                 <p className="exp-text">
-                  <strong>Hacware</strong> 
+                  <strong>Hacware</strong>
                   <br></br>
                   Software Engineer Intern
+                  <br></br> • Developed a high-impact Premium Subscription Demo
+                  feature using Python (Flask) enabling entry-tier users to
+                  preview premium capabilities; post-deployment user feedback
+                  indicated strong engagement and improved upgrade intent.
+                  <br></br> • Optimized the internal quiz and simulation system
+                  by enabling historical answer review, adding explanation
+                  modules, and redirecting failed simulation attempts directly
+                  to quizzes, streamlining the learning flow and improving
+                  completion rates.<br></br> • Improved search and filtering
+                  performance through optimized back-end logic, resulting in
+                  more accurate results and faster interactions.<br></br> •
+                  Enhanced and modernized the company’s web platform by
+                  redesigning UI/UX components using React and Handlebars,
+                  improving responsiveness across devices, and increasing
+                  navigation efficiency, leading to a more consistent and
+                  mobile-friendly user experience.<br></br> • Analyzed key API
+                  endpoints and produced a detailed Excel-based technical report
+                  demonstrating API value to prospective clients; insights
+                  directly contributed to securing a business partnership.
                 </p>
-
               </div>
             </div>
             <div className="exp-card">
@@ -101,17 +125,24 @@ function App() {
 
               <div className="exp-content">
                 <p className="exp-text">
-                  <strong>The Difference App</strong> 
+                  <strong>The Difference App</strong>
                   <br></br>
                   Software Engineer Intern
+                  <br></br>• Architected a user migration system to transition
+                  legacy PHP authentication to a Laravel + Flutter stack;
+                  engineered a custom script to upgrade credentials from legacy
+                  SHA (MD5) hashes to salted bcrypt via a
+                  forced-reauthentication workflow that guided users through
+                  secure password resets.<br></br> • Collaborated in an Agile
+                  environment to perform rigorous integration testing using
+                  provisional staging databases, ensuring data integrity and
+                  zero downtime prior to production deployment.
                 </p>
-    
-                
               </div>
             </div>
           </section>
           <section className="projects">
-            <h1 class="text-3xl font-mono text---text-color">Projects</h1>
+            <h1 className="text-3xl font-mono text---text-color">Projects</h1>
 
             <div className="project-card">
               <div className="project-image bg-black">
@@ -120,9 +151,9 @@ function App() {
 
               <div className="project-content">
                 <p className="project-text">
-                  <strong>Autobahn</strong> is a sleek web app for exploring,
-                  comparing, and inquiring about high-performance German luxury
-                  cars like AUDI, Porsche, Mercedes, and BMW.
+                  <strong>Autobahn</strong> is a automotive e-commerce platform
+                  with real-time inventory synchronization, advanced filtering,
+                  and secure user authentication, enabling seamless browsing
                 </p>
                 <div className="flex flex-col sm:flex-row sm:gap-x-4 gap-y-2">
                   <a
@@ -177,6 +208,7 @@ function App() {
           <p>© 2025 Aleksandros Doci</p>
         </footer>
       </div>
+      <PipeCanvas />
     </div>
   );
 }
