@@ -53,7 +53,7 @@ a {
   padding: 5px 10px;
   cursor: pointer;
   font-size: 2em;
-  background-color: var(--button-text);
+  background-color:transparent;
   color: var(--button-color);
   display: flex; /* allows content inside button to align */
   align-items: center;

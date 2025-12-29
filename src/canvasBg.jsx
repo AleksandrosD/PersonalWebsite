@@ -10,21 +10,21 @@ import {
   fadeInOut,
 } from "./utils.js";
 // Constants
-const pipeCount = 30;
+const pipeCount = 10;
 const pipePropCount = 8;
 const pipePropsLength = pipeCount * pipePropCount;
 const turnCount = 8;
 const turnAmount = (360 / turnCount) * (Pi / 180);
 const turnChanceRange = 58;
-const baseSpeed = 0.5;
+const baseSpeed = 0.3;
 const rangeSpeed = 1;
 const baseTTL = 100;
 const rangeTTL = 300;
 const baseWidth = 2;
 const rangeWidth = 4;
-const baseHue = 180;
-const rangeHue = 60;
-const backgroundColor = "black"; // same as original render
+const baseHue = 1000;
+const rangeHue = 500;
+const backgroundColor = "white";
 
 export default function PipeCanvas() {
   const containerRef = useRef(null);
@@ -37,7 +37,7 @@ export default function PipeCanvas() {
   // ----- Pipe Initialization -----
   const initPipe = (i) => {
     const x = rand(canvasARef.current.width);
-    const y = centerRef.current[1];
+    const y = rand(canvasARef.current.height);
     const direction = roundFn(rand(1)) ? HALF_PI : TAU - HALF_PI;
     const speed = baseSpeed + rand(rangeSpeed);
     const life = 0;
@@ -141,7 +141,6 @@ export default function PipeCanvas() {
   };
 
   const render = () => {
-    const ctxA = canvasARef.current.getContext("2d");
     const ctxB = canvasBRef.current.getContext("2d");
 
     // Draw B background
@@ -178,16 +177,16 @@ export default function PipeCanvas() {
     <div
       ref={containerRef}
       className="content--canvas"
-      style={{ position: "relative", width: "100%", height: "100vh" }}
+      style={{  width: "100%", height: "100%" }}
     >
       <canvas
         ref={canvasBRef}
         style={{
-          position: "fixed",
+          position: "absolute",
           top: 0,
           left: 0,
           width: "100%",
-          height: "100%",
+          height:"100%",
           zIndex: -1,
         }}
       />
