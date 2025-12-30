@@ -6,7 +6,6 @@ import {
 } from "react-icons/md";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import "./App.css";
-import PipeCanvas from "./canvasBg.jsx";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -208,7 +207,6 @@ function App() {
           <p>© 2025 Aleksandros Doci</p>
         </footer>
       </div>
-      <PipeCanvas />
     </div>
   );
 }

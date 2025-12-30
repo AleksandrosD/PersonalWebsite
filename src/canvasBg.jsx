@@ -10,13 +10,13 @@ import {
   fadeInOut,
 } from "./utils.js";
 // Constants
-const pipeCount = 10;
+const pipeCount = 1;
 const pipePropCount = 8;
 const pipePropsLength = pipeCount * pipePropCount;
 const turnCount = 8;
 const turnAmount = (360 / turnCount) * (Pi / 180);
 const turnChanceRange = 58;
-const baseSpeed = 0.3;
+const baseSpeed = 10;
 const rangeSpeed = 1;
 const baseTTL = 100;
 const rangeTTL = 300;
@@ -24,7 +24,7 @@ const baseWidth = 2;
 const rangeWidth = 4;
 const baseHue = 1000;
 const rangeHue = 500;
-const backgroundColor = "white";
+const backgroundColor = "";
 
 export default function PipeCanvas() {
   const containerRef = useRef(null);
@@ -130,7 +130,7 @@ export default function PipeCanvas() {
     const canvasA = canvasARef.current;
     const canvasB = canvasBRef.current;
     const width = window.innerWidth;
-    const height = window.innerHeight;
+    const height = document.body.offsetHeight;
 
     canvasA.width = width;
     canvasA.height = height;
@@ -177,7 +177,7 @@ export default function PipeCanvas() {
     <div
       ref={containerRef}
       className="content--canvas"
-      style={{  width: "100%", height: "100%" }}
+      style={{ width: "100%" }}
     >
       <canvas
         ref={canvasBRef}
@@ -185,8 +185,6 @@ export default function PipeCanvas() {
           position: "absolute",
           top: 0,
           left: 0,
-          width: "100%",
-          height:"100%",
           zIndex: -1,
         }}
       />
