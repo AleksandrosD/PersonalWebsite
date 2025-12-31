@@ -18,6 +18,5 @@ html {
   padding: 0;
   height: screen;
   overflow-x: hidden;
-  /* background-color: var(--bg-color); */
   color: var(--text-color);
 }

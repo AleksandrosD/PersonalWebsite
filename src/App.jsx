@@ -2,14 +2,15 @@ import React, { useState, useEffect, useRef } from "react";
 import {
   MdLightMode,
   MdOutlineLightMode,
-  MdOutlineEmail,
+  MdOutlineEmail,MdFullscreen
 } from "react-icons/md";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import "./App.css";
+import PipeCanvas from "./canvasBg.jsx";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
-
+  const [activeTooltip, setActiveTooltip] = useState(null); 
   useEffect(() => {
     const savedMode = localStorage.getItem("darkMode");
     if (savedMode) setDarkMode(savedMode === "true");
@@ -44,9 +45,14 @@ function App() {
 
   return (
     <div>
+      <div className="top-right-buttons"> 
+        <button className="toggle-btn">
+        {darkMode ? <MdFullscreen /> : <MdFullscreen />}
+      </button>
       <button className="toggle-btn" onClick={() => setDarkMode(!darkMode)}>
         {darkMode ? <MdOutlineLightMode /> : <MdLightMode />}
       </button>
+      </div>
       <div className="content">
         <header>
           <h1 className="text-5xl font-mono text---text-color">
@@ -207,6 +213,7 @@ function App() {
           <p>© 2025 Aleksandros Doci</p>
         </footer>
       </div>
+      <PipeCanvas backgroundColor={darkMode}/>
     </div>
   );
 }

@@ -1,4 +1,5 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect,useState } from "react";
+import "./App.css";
 import {
   Pi,
   HALF_PI,
@@ -10,7 +11,7 @@ import {
   fadeInOut,
 } from "./utils.js";
 // Constants
-const pipeCount = 1;
+const pipeCount = 5;
 const pipePropCount = 8;
 const pipePropsLength = pipeCount * pipePropCount;
 const turnCount = 8;
@@ -24,9 +25,19 @@ const baseWidth = 2;
 const rangeWidth = 4;
 const baseHue = 1000;
 const rangeHue = 500;
-const backgroundColor = "";
 
-export default function PipeCanvas() {
+
+export default function PipeCanvas({ backgroundColor }) {
+  
+  const backgroundColorRef = useRef("white");
+  useEffect(() => {
+    if(backgroundColor==true){
+      backgroundColorRef.current = "black";
+    }
+    else{
+      backgroundColorRef.current = "white";
+    }
+  }, [backgroundColor]);
   const containerRef = useRef(null);
   const canvasARef = useRef(null);
   const canvasBRef = useRef(null);
@@ -92,6 +103,7 @@ export default function PipeCanvas() {
   };
 
   const updatePipes = () => {
+    
     tickRef.current++;
     for (let i = 0; i < pipePropsLength; i += pipePropCount) {
       updatePipe(i);
@@ -144,7 +156,7 @@ export default function PipeCanvas() {
     const ctxB = canvasBRef.current.getContext("2d");
 
     // Draw B background
-    ctxB.fillStyle = backgroundColor;
+    ctxB.fillStyle = backgroundColorRef.current;;
     ctxB.fillRect(0, 0, canvasBRef.current.width, canvasBRef.current.height);
 
     // Blur A onto B
