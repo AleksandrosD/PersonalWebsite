@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import {
-  MdLightMode,
   MdOutlineLightMode,
-  MdOutlineEmail,MdFullscreen
+  MdOutlineEmail,MdFullscreen,MdLock
 } from "react-icons/md";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import "./App.css";
@@ -10,7 +9,7 @@ import PipeCanvas from "./canvasBg.jsx";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
-  const [activeTooltip, setActiveTooltip] = useState(null); 
+  const [showFullscreenText, setShowFullscreenText] = useState(false);
   useEffect(() => {
     const savedMode = localStorage.getItem("darkMode");
     if (savedMode) setDarkMode(savedMode === "true");
@@ -21,11 +20,11 @@ function App() {
 
     if (darkMode) {
       document.documentElement.style.setProperty("--bg-color", "#242424");
+      document.documentElement.style.setProperty("--link-color", "#4da6ff");
       document.documentElement.style.setProperty(
         "--text-color",
         "rgba(255,255,255,0.87)"
       );
-      document.documentElement.style.setProperty("--link-color", "#4da6ff");
       document.documentElement.style.setProperty(
         "--button-color",
         "rgba(255,255,255,0.87)"
@@ -47,10 +46,23 @@ function App() {
     <div>
       <div className="top-right-buttons"> 
         <button className="toggle-btn">
-        {darkMode ? <MdFullscreen /> : <MdFullscreen />}
+        <MdLock /> 
       </button>
+        <div className="fullscreen-wrapper">
+        <button
+          className="toggle-btn"
+          onClick={() => setShowFullscreenText(!showFullscreenText)}
+        >
+          <MdFullscreen />
+        </button>
+        {showFullscreenText && (
+          <div className="fullscreen-tooltip">
+            Original background canvas <a href="https://tympanus.net/Development/AmbientCanvasBackgrounds/index5.html" target="_blank">Link</a> here.<br/>
+          </div>
+        )}
+      </div>
       <button className="toggle-btn" onClick={() => setDarkMode(!darkMode)}>
-        {darkMode ? <MdOutlineLightMode /> : <MdLightMode />}
+        <MdOutlineLightMode />
       </button>
       </div>
       <div className="content">
@@ -198,7 +210,7 @@ function App() {
                     View Repo
                   </a>
                   <a
-                    href="https://private-user-images.githubusercontent.com/63165733/282887000-64d0dd64-b3b4-435f-9138-648efccf7f14.mp4?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjY2NzI2NDcsIm5iZiI6MTc2NjY3MjM0NywicGF0aCI6Ii82MzE2NTczMy8yODI4ODcwMDAtNjRkMGRkNjQtYjNiNC00MzVmLTkxMzgtNjQ4ZWZjY2Y3ZjE0Lm1wND9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTEyMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUxMjI1VDE0MTkwN1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWJjMmQ4YTEwNDZlYTcxOGI3MzdjZGI3NGYzMjRkMmYyOTJhNDdlMjIzODI2YjMwNzQ3ZjAwMjQ3Mjc5ZmExY2MmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.HiL0RwzVRqB_gZNSa8h6tBduYPegsamjIhODJxqsBxI"
+                    href="https://vimeo.com/1150926382?share=copy&fl=sv&fe=ci"
                     className="project-link"
                     target="_blank"
                   >

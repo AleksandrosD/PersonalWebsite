@@ -27,8 +27,26 @@ a {
   position: absolute;
   top: 20px;
   right: 20px;
-  display: flex;          /* line up children horizontally */
-  gap: 10px;              /* space between buttons */
+  display: flex;         
+  gap: 10px;              
+}
+.fullscreen-wrapper {
+  position: relative;
+}
+
+
+.fullscreen-tooltip {
+  position: absolute;
+  top: 150%; 
+  right: 0;
+  background-color: #222;
+  color: white;
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 10;
 }
 
 .toggle-btn {
