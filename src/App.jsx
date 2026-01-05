@@ -6,10 +6,12 @@ import {
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import "./App.css";
 import PipeCanvas from "./canvasBg.jsx";
+import CodePass from "./modal.jsx";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [showFullscreenText, setShowFullscreenText] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   useEffect(() => {
     const savedMode = localStorage.getItem("darkMode");
     if (savedMode) setDarkMode(savedMode === "true");
@@ -45,9 +47,10 @@ function App() {
   return (
     <div>
       <div className="top-right-buttons"> 
-        <button className="toggle-btn">
+        <button className="toggle-btn" onClick={() => setShowModal(true)}>
         <MdLock /> 
       </button>
+      {showModal && ( <CodePass onClose={() => setShowModal(false)}/> )}
         <div className="fullscreen-wrapper">
         <button
           className="toggle-btn"
@@ -225,7 +228,7 @@ function App() {
           <p>© 2025 Aleksandros Doci</p>
         </footer>
       </div>
-      <PipeCanvas backgroundColor={darkMode}/>
+      <PipeCanvas backgroundColor={darkMode}/> 
     </div>
   );
 }
