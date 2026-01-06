@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import {
   MdOutlineLightMode,
-  MdOutlineEmail,MdFullscreen,MdLock
+  MdOutlineEmail,
+  MdFullscreen,
+  MdLock,
 } from "react-icons/md";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import "./App.css";
@@ -46,27 +48,35 @@ function App() {
 
   return (
     <div>
-      <div className="top-right-buttons"> 
+      <div className="top-right-buttons">
         <button className="toggle-btn" onClick={() => setShowModal(true)}>
-        <MdLock /> 
-      </button>
-      {showModal && ( <CodePass onClose={() => setShowModal(false)}/> )}
-        <div className="fullscreen-wrapper">
-        <button
-          className="toggle-btn"
-          onClick={() => setShowFullscreenText(!showFullscreenText)}
-        >
-          <MdFullscreen />
+          <MdLock />
         </button>
-        {showFullscreenText && (
-          <div className="fullscreen-tooltip">
-            Original background canvas <a href="https://tympanus.net/Development/AmbientCanvasBackgrounds/index5.html" target="_blank">Link</a> here.<br/>
-          </div>
-        )}
-      </div>
-      <button className="toggle-btn" onClick={() => setDarkMode(!darkMode)}>
-        <MdOutlineLightMode />
-      </button>
+        {showModal && <CodePass onClose={() => setShowModal(false)} />}
+        <div className="fullscreen-wrapper">
+          <button
+            className="toggle-btn"
+            onClick={() => setShowFullscreenText(!showFullscreenText)}
+          >
+            <MdFullscreen />
+          </button>
+          {showFullscreenText && (
+            <div className="fullscreen-tooltip">
+              Original background canvas{" "}
+              <a
+                href="https://tympanus.net/Development/AmbientCanvasBackgrounds/index5.html"
+                target="_blank"
+              >
+                Link
+              </a>{" "}
+              here.
+              <br />
+            </div>
+          )}
+        </div>
+        <button className="toggle-btn" onClick={() => setDarkMode(!darkMode)}>
+          <MdOutlineLightMode />
+        </button>
       </div>
       <div className="content">
         <header>
@@ -222,13 +232,42 @@ function App() {
                 </div>
               </div>
             </div>
+            <div className="project-card">
+              <div className="project-image bg-black">
+                <img src="/runnerLogo.png" alt="Project" />
+              </div>
+
+              <div className="project-content">
+                <p className="project-text">
+                  <strong>Runner</strong> is a full-stack restaurant management
+                  system designed to streamline restaurant operations, you can
+                  easily manage tables, menu categories, and food items.
+                </p>
+                <div className="flex flex-col sm:flex-row sm:gap-x-4 gap-y-2">
+                  <a
+                    href="https://github.com/AleksandrosD/TTP-CAPSTONE"
+                    className="project-link mr-1"
+                    target="_blank"
+                  >
+                    View Repo
+                  </a>
+                  <a
+                    href="https://vimeo.com/1150926382?share=copy&fl=sv&fe=ci"
+                    className="project-link"
+                    target="_blank"
+                  >
+                    View Project
+                  </a>
+                </div>
+              </div>
+            </div>
           </section>
         </main>
         <footer>
           <p>© 2025 Aleksandros Doci</p>
         </footer>
       </div>
-      <PipeCanvas backgroundColor={darkMode}/> 
+      <PipeCanvas backgroundColor={darkMode} />
     </div>
   );
 }
