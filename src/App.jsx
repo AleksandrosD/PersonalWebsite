@@ -49,9 +49,9 @@ function App() {
   return (
     <div>
       <div className="top-right-buttons">
-        <button className="toggle-btn" onClick={() => setShowModal(true)}>
+        {/* <button className="toggle-btn" onClick={() => setShowModal(true)}>
           <MdLock />
-        </button>
+        </button> */}
         {showModal && <CodePass onClose={() => setShowModal(false)} />}
         <div className="fullscreen-wrapper">
           <button
@@ -118,7 +118,7 @@ function App() {
 
             <div className="exp-card">
               <div className="exp-image">
-                <img src="/hacwareLogo.png" alt="Hacware" />
+                <img src="/images/hacwareLogo.png" alt="Hacware" />
               </div>
 
               <div className="exp-content">
@@ -150,7 +150,7 @@ function App() {
             </div>
             <div className="exp-card">
               <div className="exp-image ">
-                <img src="/theDifferenceLogo.png" alt="The Difference" />
+                <img src="images/theDifferenceLogo.png" alt="The Difference" />
               </div>
 
               <div className="exp-content">
@@ -170,20 +170,59 @@ function App() {
                 </p>
               </div>
             </div>
+            <div className="exp-card">
+              <div className="exp-image">
+                <img src="images/TECLogo.PNG" alt="TECLogo" />
+              </div>
+
+              <div className="exp-content">
+                <p className="exp-text">
+                  <strong>Transform Electrical Inc.</strong>
+                  <br></br>
+                  Electrician/Foreman
+                  <br></br> • Designed and implemented efficient electrical
+                  wiring layouts, load calculations, and circuit configurations,
+                  optimizing energy use and reducing material waste by 15%.
+                  <br></br> • Managed installation, maintenance, and
+                  troubleshooting of complex electrical systems including
+                  lighting, power distribution, and control panels, minimizing
+                  downtime and improving system reliability.<br></br> •
+                  Supervised and coordinated a team of electricians on
+                  commercial and residential projects, ensuring adherence to
+                  safety protocols, project timelines, and quality standards,
+                  resulting in zero safety incidents and timely project
+                  completion.<br></br> • Conducted on-site inspections and
+                  coordinated with contractors, engineers, and clients to
+                  resolve technical challenges, ensuring compliance with local
+                  electrical codes and project specifications. <br></br> •
+                  Trained and mentored junior electricians, enhancing team skill
+                  levels, reducing errors, and fostering a culture of continuous
+                  improvement and safety awareness.
+                </p>
+              </div>
+            </div>
           </section>
           <section className="projects">
             <h1 className="text-3xl font-mono text---text-color">Projects</h1>
 
             <div className="project-card">
               <div className="project-image bg-black">
-                <img src="/autobahnLogo.png" alt="Project" />
+                <img src="images/autobahnLogo.png" alt="Project" />
               </div>
 
               <div className="project-content">
                 <p className="project-text">
-                  <strong>Autobahn</strong> is a automotive e-commerce platform
-                  with real-time inventory synchronization, advanced filtering,
-                  and secure user authentication, enabling seamless browsing
+                  <strong>Autobahn</strong> is a car marketplace application
+                  initially designed for a single dealership, allowing users to
+                  browse the catalog and filter vehicles based on preferences.
+                  Expanded the platform to include user accounts, enabling users
+                  to save favorite cars, receive email updates, and submit
+                  inquiries. Later, implemented a vehicle listing feature where
+                  users can upload their own cars with detailed information and
+                  photos, transforming the platform into a fully interactive
+                  marketplace. The app combines intuitive browsing, personalized
+                  notifications, and user-generated listings to enhance
+                  engagement and simplify the buying and selling experience.
                 </p>
                 <div className="flex flex-col sm:flex-row sm:gap-x-4 gap-y-2">
                   <a
@@ -204,15 +243,23 @@ function App() {
               </div>
             </div>
             <div className="project-card">
-              <div className="project-image bg-black">
-                <img src="/runnerLogo.png" alt="Project" />
+              <div className="project-image ">
+                <img src="images/runnerLogo.png" alt="Project" />
               </div>
 
               <div className="project-content">
                 <p className="project-text">
-                  <strong>Runner</strong> is a full-stack restaurant management
-                  system designed to streamline restaurant operations, you can
-                  easily manage tables, menu categories, and food items.
+                  <strong>Runner</strong> a full-featured restaurant management
+                  application that allows owners and managers to create
+                  accounts, configure tables, and manage menus while tracking
+                  all incoming and outgoing orders. The app maintains detailed
+                  records of daily orders and receipts for each table, providing
+                  historical insights and simplifying reporting. Future updates
+                  include Waiter and Kitchen Views, enabling waitstaff to submit
+                  orders via mobile devices and kitchens to view and prioritize
+                  tasks, while managers can monitor all restaurant activity in
+                  real time, improving operational efficiency and workflow
+                  coordination.
                 </p>
                 <div className="flex flex-col sm:flex-row sm:gap-x-4 gap-y-2">
                   <a
@@ -233,30 +280,26 @@ function App() {
               </div>
             </div>
             <div className="project-card">
-              <div className="project-image bg-black">
-                <img src="/runnerLogo.png" alt="Project" />
+              <div className="project-image">
+                <img src="images/eyesXLogo.png" alt="Project" />
               </div>
 
               <div className="project-content">
                 <p className="project-text">
-                  <strong>Runner</strong> is a full-stack restaurant management
-                  system designed to streamline restaurant operations, you can
-                  easily manage tables, menu categories, and food items.
+                  <strong>EyesX</strong> is a Python-based screen monitoring
+                  tool that watches live security camera feeds displayed on your
+                  screen using YOLOv8 pattern recognition. Users can define
+                  specific areas to monitor, and when movement or recognized
+                  patterns are detected within those regions, the system
+                  immediately triggers an alarm—providing an intelligent,
+                  vision-powered security layer.
                 </p>
                 <div className="flex flex-col sm:flex-row sm:gap-x-4 gap-y-2">
-                  <a
-                    href="https://github.com/AleksandrosD/TTP-CAPSTONE"
-                    className="project-link mr-1"
-                    target="_blank"
-                  >
-                    View Repo
+                  <a className="project-link mr-1" target="_blank">
+                    Private
                   </a>
-                  <a
-                    href="https://vimeo.com/1150926382?share=copy&fl=sv&fe=ci"
-                    className="project-link"
-                    target="_blank"
-                  >
-                    View Project
+                  <a className="project-link" target="_blank">
+                    Private
                   </a>
                 </div>
               </div>
