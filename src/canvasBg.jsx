@@ -11,7 +11,7 @@ import {
   fadeInOut,
 } from "./utils.js";
 // Constants
-const pipeCount = 2;
+const pipeCount = 5;
 const pipePropCount = 8;
 const pipePropsLength = pipeCount * pipePropCount;
 const turnCount = 8;
@@ -30,7 +30,7 @@ export default function PipeCanvas({ backgroundColor }) {
   const backgroundColorRef = useRef("white");
   useEffect(() => {
     if (backgroundColor == true) {
-      backgroundColorRef.current = "black";
+      backgroundColorRef.current = "#242424";
     } else {
       backgroundColorRef.current = "white";
     }
@@ -110,7 +110,7 @@ export default function PipeCanvas({ backgroundColor }) {
   const drawPipe = (x, y, life, ttl, width, hue) => {
     const ctx = canvasARef.current.getContext("2d");
     ctx.save();
-    ctx.strokeStyle = `hsla(${hue},75%,50%,${fadeInOut(life, ttl) * 0.3})`;
+    ctx.strokeStyle = `hsla(${hue},75%,50%,${fadeInOut(life, ttl) * 0.4})`;
     ctx.beginPath();
     ctx.arc(x, y, width, 0, TAU);
     ctx.stroke();
