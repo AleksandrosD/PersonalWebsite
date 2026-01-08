@@ -11,15 +11,18 @@ import PipeCanvas from "./canvasBg.jsx";
 import CodePass from "./modal.jsx";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    const saved = localStorage.getItem("darkMode");
+    console.log(saved)
+    if (saved !== null) return saved === "true";
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  });
   const [showFullscreenText, setShowFullscreenText] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  useEffect(() => {
-    const savedMode = localStorage.getItem("darkMode");
-    if (savedMode) setDarkMode(savedMode === "true");
-  }, []);
+ 
 
   useEffect(() => {
+    
     localStorage.setItem("darkMode", darkMode);
 
     if (darkMode) {
@@ -118,7 +121,7 @@ function App() {
 
             <div className="exp-card">
               <div className="exp-image">
-                <img src="/images/hacwareLogo.png" alt="Hacware" />
+                <img src="images/hacwareLogo.png" alt="Hacware" />
               </div>
 
               <div className="exp-content">
