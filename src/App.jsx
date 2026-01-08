@@ -227,7 +227,7 @@ function App() {
                   notifications, and user-generated listings to enhance
                   engagement and simplify the buying and selling experience.
                 </p>
-                <div className="flex flex-col sm:flex-row sm:gap-x-4 gap-y-2">
+                <div className="flex flex-row sm:gap-x-4 gap-y-2">
                   <a
                     href="https://github.com/AleksandrosD/Autobahn"
                     className="project-link mr-1"
@@ -264,7 +264,7 @@ function App() {
                   real time, improving operational efficiency and workflow
                   coordination.
                 </p>
-                <div className="flex flex-col sm:flex-row sm:gap-x-4 gap-y-2">
+                <div className="flex flex-row sm:gap-x-4 gap-y-2">
                   <a
                     href="https://github.com/AleksandrosD/TTP-CAPSTONE"
                     className="project-link mr-1"
@@ -297,7 +297,7 @@ function App() {
                   immediately triggers an alarm—providing an intelligent,
                   vision-powered security layer.
                 </p>
-                <div className="flex flex-col sm:flex-row sm:gap-x-4 gap-y-2">
+                <div className="flex flex-row sm:gap-x-4 gap-y-2">
                   <a className="project-link mr-1" target="_blank">
                     Private
                   </a>

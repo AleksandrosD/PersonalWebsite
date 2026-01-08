@@ -137,7 +137,7 @@ export default function PipeCanvas({ backgroundColor }) {
   const resizeCanvas = () => {
     const canvasA = canvasARef.current;
     const canvasB = canvasBRef.current;
-    const width = window.innerWidth;
+    const width = document.body.offsetWidth;
     const height = document.body.offsetHeight;
 
     canvasA.width = width;

@@ -107,6 +107,14 @@ a {
   color: black;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 }
+@media (max-width: 768px) {
+  .project-card {
+    flex-direction: column;
+  }
+  .exp-card {
+    flex-direction: column;
+  }
+}
 .exp-card {
   display: flex;
   margin-top: 20px;
