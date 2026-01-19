@@ -289,21 +289,16 @@ function App() {
 
               <div className="project-content">
                 <p className="project-text">
-                  <strong>EyesX</strong> is a Python-based screen monitoring
-                  tool that watches live security camera feeds displayed on your
-                  screen using YOLOv8 pattern recognition. Users can define
-                  specific areas to monitor, and when movement or recognized
-                  patterns are detected within those regions, the system
-                  immediately triggers an alarm—providing an intelligent,
-                  vision-powered security layer.
+                  <strong>EyesX</strong> is a Python-based security monitoring system that analyzes live surveillance camera feeds displayed on-screen. It features two detection modes: YOLOv8-based object recognition and foreground–background motion detection. Users can define specific regions of interest, and the system automatically triggers alerts when unauthorized movement or detected objects appear, providing an intelligent and practical vision-powered security solution.
+The system is currently deployed in a real workplace security environment.
                 </p>
-                <div className="flex flex-row sm:gap-x-4 gap-y-2">
-                  <a className="project-link mr-1" target="_blank">
-                    Private
+                <div className="flex flex-col sm:flex-row sm:gap-x-4 gap-y-2">
+                  <a href="https://github.com/AleksandrosD/EyesX"className="project-link mr-1" target="_blank">
+                    View Repo
                   </a>
-                  <a className="project-link" target="_blank">
+                  {/* <a className="project-link" target="_blank">
                     Private
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </div>
