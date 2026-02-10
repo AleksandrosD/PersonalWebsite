@@ -19,8 +19,10 @@ function App() {
   });
   const [showFullscreenText, setShowFullscreenText] = useState(false);
   const [showModal, setShowModal] = useState(false);
- 
-
+  const [meme,setMeme]=useState("https://media1.tenor.com/m/_grZiQUtZOAAAAAd/bugsbunny-tired.gif")
+  const handleMeme = () => {
+    setMeme("https://media1.tenor.com/m/Q4Ib-uca8QAAAAAd/orange-cat-laughing.gif");
+  };
   useEffect(() => {
     
     localStorage.setItem("darkMode", darkMode);
@@ -56,7 +58,7 @@ function App() {
           <MdLock />
         </button> */}
         {showModal && <CodePass onClose={() => setShowModal(false)} />}
-        <div className="fullscreen-wrapper">
+        
           <button
             className="toggle-btn"
             onClick={() => setShowFullscreenText(!showFullscreenText)}
@@ -76,7 +78,7 @@ function App() {
               <br />
             </div>
           )}
-        </div>
+        
         <button className="toggle-btn" onClick={() => setDarkMode(!darkMode)}>
           <MdOutlineLightMode />
         </button>
@@ -301,6 +303,28 @@ The system is currently deployed in a real workplace security environment.
                   </a> */}
                 </div>
               </div>
+              
+            </div>
+            <div className="project-card">
+              <div className="project-image">
+                <img src="images/ChetoLogoNoBG.png" alt="Project" />
+              </div>
+
+              <div className="project-content">
+                <p className="project-text">
+                  <strong>{/*Cheto*/}</strong> 
+                  <img src={meme} alt="working" style={{display: "block", margin: "0 auto",height: "auto"}}/>
+                </p>
+                <div className="flex flex-col sm:flex-row sm:gap-x-4 gap-y-2">
+                  <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1"className="project-link mr-1" target="_blank" onClick={handleMeme}>
+                    Private
+                  </a>
+                  {/* <a className="project-link" target="_blank">
+                    Private
+                  </a> */}
+                </div>
+              </div>
+              
             </div>
           </section>
         </main>
