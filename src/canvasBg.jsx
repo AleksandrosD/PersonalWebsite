@@ -55,7 +55,7 @@ export default function PipeCanvas({ backgroundColor }) {
 
     pipePropsRef.current.set(
       [x, y, direction, speed, life, ttl, width, hue],
-      i
+      i,
     );
   };
 
@@ -173,12 +173,18 @@ export default function PipeCanvas({ backgroundColor }) {
   };
 
   useEffect(() => {
-    resizeCanvas();
-    initPipes();
-    draw();
+    const timer = setTimeout(() => {
+      resizeCanvas();
+      initPipes();
+      draw();
 
-    window.addEventListener("resize", resizeCanvas);
-    return () => window.removeEventListener("resize", resizeCanvas);
+      window.addEventListener("resize", resizeCanvas);
+    }, 1000); // 1000ms = 1 second
+
+    return () => {
+      clearTimeout(timer); // prevent memory leaks
+      window.removeEventListener("resize", resizeCanvas);
+    };
   }, []);
 
   return (
