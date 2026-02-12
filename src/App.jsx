@@ -19,9 +19,9 @@ function App() {
   });
   const [showFullscreenText, setShowFullscreenText] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const [meme,setMeme]=useState("https://media1.tenor.com/m/_grZiQUtZOAAAAAd/bugsbunny-tired.gif")
+  const [meme,setMeme]=useState("images/bugs.gif")
   const handleMeme = () => {
-    setMeme("https://media1.tenor.com/m/Q4Ib-uca8QAAAAAd/orange-cat-laughing.gif");
+    setMeme("images/cat.gif");
   };
   useEffect(() => {
     
