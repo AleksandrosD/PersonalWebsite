@@ -1,16 +1,17 @@
 @import "tailwindcss";
 .app {
-  min-height: 100vh; /* full viewport height */
-  max-width: screen;
-  margin: auto;
+  min-height: 100dvh; /* full viewport height */
+  max-width: 100%;
+  margin: 0 auto;
   padding: 20px;
   border-radius: 8px;
   position: relative;
   color: var(--text-color);
   transition: background-color 0.3s, color 0.3s;
+  overscroll-behavior: none;
 }
 .content {
-  min-height: 100vh; /* full viewport height */
+  min-height: auto;
   max-width: 800px;
   width: 100%;
   margin: auto;

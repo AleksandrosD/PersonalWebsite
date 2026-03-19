@@ -10,13 +10,14 @@
   --bg-color: #fff;
   --text-color: #333;
   --button-text: #fff;
+  overscroll-behavior: none;
 }
 
 body,
 html {
   margin: 0;
   padding: 0;
-  height: screen;
   overflow-x: hidden;
   color: var(--text-color);
+  overscroll-behavior: none;
 }

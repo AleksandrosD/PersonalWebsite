@@ -50,9 +50,13 @@ function App() {
       );
     }
   }, [darkMode]);
+  useEffect(() => {
+    document.documentElement.style.overscrollBehavior = "none";
+    document.body.style.overscrollBehavior = "none";
+  }, []);
 
   return (
-    <div>
+    <div className="app">
       <div className="top-right-buttons">
         {/* <button className="toggle-btn" onClick={() => setShowModal(true)}>
           <MdLock />
@@ -65,7 +69,7 @@ function App() {
           >
             <MdFullscreen />
           </button>
-          {showFullscreenText && (
+          {/* {showFullscreenText && (
             <div className="fullscreen-tooltip">
               Original background canvas{" "}
               <a
@@ -77,7 +81,7 @@ function App() {
               here.
               <br />
             </div>
-          )}
+          )} */}
         
         <button className="toggle-btn" onClick={() => setDarkMode(!darkMode)}>
           <MdOutlineLightMode />
