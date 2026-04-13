@@ -213,6 +213,48 @@ function App() {
           </section>
           <section className="projects">
             <h1 className="text-3xl font-mono text---text-color">Projects</h1>
+             <div className="project-card">
+              <div className="project-image">
+                <img src="images/ChetoLogoNoBG.png" alt="Project" />
+              </div>
+
+              <div className="project-content">
+                <p className="project-text">
+                  <strong>{/*Cheto*/}</strong> 
+                  <img src={meme} alt="working" style={{display: "block", margin: "0 auto",height: "auto"}}/>
+                </p>
+                <div className="flex flex-col sm:flex-row sm:gap-x-4 gap-y-2">
+                  <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1"className="project-link mr-1" target="_blank" onClick={handleMeme}>
+                    Private
+                  </a>
+                  {/* <a className="project-link" target="_blank">
+                    Private
+                  </a> */}
+                </div>
+              </div>
+              
+            </div>
+            <div className="project-card">
+              <div className="project-image">
+                <img src="images/eyesXLogo.png" alt="Project" />
+              </div>
+
+              <div className="project-content">
+                <p className="project-text">
+                  <strong>EyesX</strong> is a Python-based security monitoring system that analyzes live surveillance camera feeds displayed on-screen. It features two detection modes: YOLOv8-based object recognition and foreground–background motion detection. Users can define specific regions of interest, and the system automatically triggers alerts when unauthorized movement or detected objects appear, providing an intelligent and practical vision-powered security solution.
+The system is currently deployed in a real workplace security environment.
+                </p>
+                <div className="flex flex-col sm:flex-row sm:gap-x-4 gap-y-2">
+                  <a href="https://github.com/AleksandrosD/EyesX"className="project-link mr-1" target="_blank">
+                    View Repo
+                  </a>
+                  {/* <a className="project-link" target="_blank">
+                    Private
+                  </a> */}
+                </div>
+              </div>
+              
+            </div>
 
             <div className="project-card">
               <div className="project-image bg-black">
@@ -288,28 +330,7 @@ function App() {
                 </div>
               </div>
             </div>
-            <div className="project-card">
-              <div className="project-image">
-                <img src="images/eyesXLogo.png" alt="Project" />
-              </div>
-
-              <div className="project-content">
-                <p className="project-text">
-                  <strong>EyesX</strong> is a Python-based security monitoring system that analyzes live surveillance camera feeds displayed on-screen. It features two detection modes: YOLOv8-based object recognition and foreground–background motion detection. Users can define specific regions of interest, and the system automatically triggers alerts when unauthorized movement or detected objects appear, providing an intelligent and practical vision-powered security solution.
-The system is currently deployed in a real workplace security environment.
-                </p>
-                <div className="flex flex-col sm:flex-row sm:gap-x-4 gap-y-2">
-                  <a href="https://github.com/AleksandrosD/EyesX"className="project-link mr-1" target="_blank">
-                    View Repo
-                  </a>
-                  {/* <a className="project-link" target="_blank">
-                    Private
-                  </a> */}
-                </div>
-              </div>
-              
-            </div>
-            <div className="project-card">
+              <div className="project-card">
               <div className="project-image">
                 <img src="images/ChetoLogoNoBG.png" alt="Project" />
               </div>
@@ -330,6 +351,9 @@ The system is currently deployed in a real workplace security environment.
               </div>
               
             </div>
+
+            
+           
           </section>
         </main>
         <footer>
