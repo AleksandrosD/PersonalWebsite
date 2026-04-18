@@ -11,20 +11,21 @@ import {
   fadeInOut,
 } from "./utils.js";
 // Constants
-const pipeCount = 5;
+const pipeCount = 2;
 const pipePropCount = 8;
 const pipePropsLength = pipeCount * pipePropCount;
 const turnCount = 8;
 const turnAmount = (360 / turnCount) * (Pi / 180);
 const turnChanceRange = 58;
-const baseSpeed = 10;
+const baseSpeed = 5;
 const rangeSpeed = 1;
 const baseTTL = 100;
 const rangeTTL = 300;
 const baseWidth = 2;
-const rangeWidth = 4;
+const rangeWidth = 5;
 const baseHue = 1000;
 const rangeHue = 500;
+
 
 export default function PipeCanvas({ backgroundColor }) {
   const backgroundColorRef = useRef("white");
@@ -110,7 +111,7 @@ export default function PipeCanvas({ backgroundColor }) {
   const drawPipe = (x, y, life, ttl, width, hue) => {
     const ctx = canvasARef.current.getContext("2d");
     ctx.save();
-    ctx.strokeStyle = `hsla(${hue},75%,50%,${fadeInOut(life, ttl) * 0.4})`;
+    ctx.strokeStyle = `hsla(${hue},75%,50%,${fadeInOut(life, ttl) * 0.2})`;
     ctx.beginPath();
     ctx.arc(x, y, width, 0, TAU);
     ctx.stroke();
@@ -166,10 +167,12 @@ export default function PipeCanvas({ backgroundColor }) {
   };
 
   // ----- Animation Loop -----
+  const animFrameRef = useRef(null);
   const draw = () => {
     updatePipes();
     render();
-    requestAnimationFrame(draw);
+    // requestAnimationFrame(draw);
+    animFrameRef.current = requestAnimationFrame(draw);
   };
 
   useEffect(() => {
@@ -183,6 +186,7 @@ export default function PipeCanvas({ backgroundColor }) {
 
     return () => {
       clearTimeout(timer); // prevent memory leaks
+      cancelAnimationFrame(animFrameRef.current);
       window.removeEventListener("resize", resizeCanvas);
     };
   }, []);

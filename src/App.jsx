@@ -69,7 +69,7 @@ function App() {
           >
             <MdFullscreen />
           </button>
-          {/* {showFullscreenText && (
+          {showFullscreenText && (
             <div className="fullscreen-tooltip">
               Original background canvas{" "}
               <a
@@ -81,7 +81,7 @@ function App() {
               here.
               <br />
             </div>
-          )} */}
+          )}
         
         <button className="toggle-btn" onClick={() => setDarkMode(!darkMode)}>
           <MdOutlineLightMode />
@@ -220,12 +220,21 @@ function App() {
 
               <div className="project-content">
                 <p className="project-text">
-                  <strong>{/*Cheto*/}</strong> 
-                  <img src={meme} alt="working" style={{display: "block", margin: "0 auto",height: "auto"}}/>
+                  <strong>Cheto</strong> is a Python-based AI-powered overlay tool that 
+                  analyzes on-screen content in real time. Users can draw a selection 
+                  box over any region of their display, and the system automatically 
+                  extracts the text using OCR and forwards it to an AI model through the 
+                  Ollama API, which identifies and answers any question found within the 
+                  captured area. The answer is then displayed as a subtitle overlay at the 
+                  bottom of the screen and can be read aloud via text-to-speech, creating 
+                  a seamless eyes-free experience. Cheto is designed for educational and 
+                  accessibility use cases, helping users quickly process and understand 
+                  on-screen information without interrupting their workflow.
+                  
                 </p>
                 <div className="flex flex-col sm:flex-row sm:gap-x-4 gap-y-2">
-                  <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1"className="project-link mr-1" target="_blank" onClick={handleMeme}>
-                    Private
+                  <a href="https://github.com/AleksandrosD/Cheto"className="project-link mr-1" target="_blank">
+                    View Repo
                   </a>
                   {/* <a className="project-link" target="_blank">
                     Private
@@ -241,8 +250,13 @@ function App() {
 
               <div className="project-content">
                 <p className="project-text">
-                  <strong>EyesX</strong> is a Python-based security monitoring system that analyzes live surveillance camera feeds displayed on-screen. It features two detection modes: YOLOv8-based object recognition and foreground–background motion detection. Users can define specific regions of interest, and the system automatically triggers alerts when unauthorized movement or detected objects appear, providing an intelligent and practical vision-powered security solution.
-The system is currently deployed in a real workplace security environment.
+                  <strong>EyesX</strong> is a Python-based security monitoring system that 
+                  analyzes live surveillance camera feeds displayed on-screen. It features 
+                  two detection modes: YOLOv8-based object recognition and foreground–background 
+                  motion detection. Users can define specific regions of interest, and the system 
+                  automatically triggers alerts when unauthorized movement or detected objects 
+                  appear, providing an intelligent and practical vision-powered security solution.
+                  The system is currently deployed in a real workplace security environment.
                 </p>
                 <div className="flex flex-col sm:flex-row sm:gap-x-4 gap-y-2">
                   <a href="https://github.com/AleksandrosD/EyesX"className="project-link mr-1" target="_blank">
@@ -332,7 +346,7 @@ The system is currently deployed in a real workplace security environment.
             </div>
               <div className="project-card">
               <div className="project-image">
-                <img src="images/ChetoLogoNoBG.png" alt="Project" />
+                <img src="images/MTATracker.png" alt="Project" />
               </div>
 
               <div className="project-content">
